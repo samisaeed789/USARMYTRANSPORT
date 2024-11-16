@@ -1,0 +1,7 @@
+[2022-12-13 08:34:32] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[2022-12-13 08:34:32] layer "outer.png": Duplicate path: outer.png
+[2022-12-13 08:34:32] layer "filler.png": Duplicate path: filler.png
+[2022-12-13 08:34:32] layer "outer.png": Duplicate path: outer.png
+[2022-12-13 08:34:32] layer "filler.png": Duplicate path: filler.png
+[2022-12-13 08:34:32] layer "outer.png": Duplicate path: outer.png
+[2022-12-13 08:34:32] layer "filler.png": Duplicate path: filler.png

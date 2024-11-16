@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 1a846274b7867524aa1a906255870d17
+timeCreated: 1476977085
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BACK HURDLE
+    100002: BigTruck01
+    100004: BOTTOM PLANK
+    100006: glass
+    100008: side support
+    100010: //RootNode
+    100012: UPPER PLANK P1
+    100014: UPPER PLANK P2
+    100016: WheelBL
+    100018: WheelBR
+    100020: WheelFL
+    100022: WheelFR
+    400000: BACK HURDLE
+    400002: BigTruck01
+    400004: BOTTOM PLANK
+    400006: glass
+    400008: side support
+    400010: //RootNode
+    400012: UPPER PLANK P1
+    400014: UPPER PLANK P2
+    400016: WheelBL
+    400018: WheelBR
+    400020: WheelFL
+    400022: WheelFR
+    2300000: BACK HURDLE
+    2300002: BigTruck01
+    2300004: BOTTOM PLANK
+    2300006: glass
+    2300008: side support
+    2300010: UPPER PLANK P1
+    2300012: UPPER PLANK P2
+    2300014: WheelBL
+    2300016: WheelBR
+    2300018: WheelFL
+    2300020: WheelFR
+    3300000: BACK HURDLE
+    3300002: BigTruck01
+    3300004: BOTTOM PLANK
+    3300006: glass
+    3300008: side support
+    3300010: UPPER PLANK P1
+    3300012: UPPER PLANK P2
+    3300014: WheelBL
+    3300016: WheelBR
+    3300018: WheelFL
+    3300020: WheelFR
+    4300000: WheelFR
+    4300002: WheelFL
+    4300004: WheelBL
+    4300006: WheelBR
+    4300008: BigTruck01
+    4300010: side support
+    4300012: BACK HURDLE
+    4300014: BOTTOM PLANK
+    4300016: UPPER PLANK P1
+    4300018: UPPER PLANK P2
+    4300020: glass
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 4
+    meshCompression: 1
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

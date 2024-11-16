@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: b3547522ef44f5249a16c6cd525231a1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body
+    100002: land_cruizer_200_2018wheel_003
+    100004: land_cruizer_200_2018wheel_004
+    100006: land_cruizer_200_2018wheel_005
+    100008: land_cruizer_200_2018wheel_1
+    100010: //RootNode
+    100012: Tyre
+    100014: Tyre1
+    100016: Tyre2
+    100018: Tyre3
+    400000: Body
+    400002: land_cruizer_200_2018wheel_003
+    400004: land_cruizer_200_2018wheel_004
+    400006: land_cruizer_200_2018wheel_005
+    400008: land_cruizer_200_2018wheel_1
+    400010: //RootNode
+    400012: Tyre
+    400014: Tyre1
+    400016: Tyre2
+    400018: Tyre3
+    2100000: Brakes
+    2100002: flash_plastik
+    2100004: flash
+    2100006: CarGlassExterior
+    2100008: lc_200_2018_light
+    2100010: lambert2
+    2100012: CarLightPlastic
+    2100014: lc_200_2018_wheel
+    2300000: Body
+    2300002: land_cruizer_200_2018wheel_003
+    2300004: land_cruizer_200_2018wheel_004
+    2300006: land_cruizer_200_2018wheel_005
+    2300008: land_cruizer_200_2018wheel_1
+    2300010: Tyre
+    2300012: Tyre1
+    2300014: Tyre2
+    2300016: Tyre3
+    3300000: Body
+    3300002: land_cruizer_200_2018wheel_003
+    3300004: land_cruizer_200_2018wheel_004
+    3300006: land_cruizer_200_2018wheel_005
+    3300008: land_cruizer_200_2018wheel_1
+    3300010: Tyre
+    3300012: Tyre1
+    3300014: Tyre2
+    3300016: Tyre3
+    4300000: Body
+    4300002: land_cruizer_200_2018wheel_003
+    4300004: land_cruizer_200_2018wheel_1
+    4300006: land_cruizer_200_2018wheel_004
+    4300008: land_cruizer_200_2018wheel_005
+    4300010: Tyre
+    4300012: Tyre1
+    4300014: Tyre2
+    4300016: Tyre3
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brakes
+    second: {fileID: 2100000, guid: 4c54d9d1b42f0d741b239a6e319c4898, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarGlassExterior
+    second: {fileID: 2100000, guid: 50c01a3031ca9b24384d99204e143b20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarLightPlastic
+    second: {fileID: 2100000, guid: e7cfceec70dfcd547ab40ba676a33e20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 2e29615959f91ef4bacfcbd95e47bfea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_200_2018_light
+    second: {fileID: 2100000, guid: af18d4692b50e6c4b89f1c99cc66f5d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_200_2018_wheel
+    second: {fileID: 2100000, guid: f12c0b3f7f2a4f04a823b80396fb4ba7, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 2
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 7269742fc316723489ac8aa29fc2e3fa
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Airport_Building
+    100004: Env_B_Airport_Boundary_Wall
+    100006: Env_B_Airport_Ground
+    100008: Hospital
+    100010: Light_house001
+    100012: Light_house002
+    100014: Small_Warehouse_005
+    100016: warehouse1_b_008
+    400000: //RootNode
+    400002: Airport_Building
+    400004: Env_B_Airport_Boundary_Wall
+    400006: Env_B_Airport_Ground
+    400008: Hospital
+    400010: Light_house001
+    400012: Light_house002
+    400014: Small_Warehouse_005
+    400016: warehouse1_b_008
+    2100000: Atlas_A
+    2100002: Grass
+    2100004: Floor_Tile
+    2100006: Fence & Road
+    2300000: Airport_Building
+    2300002: Env_B_Airport_Boundary_Wall
+    2300004: Env_B_Airport_Ground
+    2300006: Hospital
+    2300008: Light_house001
+    2300010: Light_house002
+    2300012: Small_Warehouse_005
+    2300014: warehouse1_b_008
+    3300000: Airport_Building
+    3300002: Env_B_Airport_Boundary_Wall
+    3300004: Env_B_Airport_Ground
+    3300006: Hospital
+    3300008: Light_house001
+    3300010: Light_house002
+    3300012: Small_Warehouse_005
+    3300014: warehouse1_b_008
+    4300000: Hospital
+    4300002: Env_B_Airport_Ground
+    4300004: Env_B_Airport_Boundary_Wall
+    4300006: Light_house002
+    4300008: Light_house001
+    4300010: warehouse1_b_008
+    4300012: Airport_Building
+    4300014: Small_Warehouse_005
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Atlas_A
+    second: {fileID: 2100000, guid: 09a1fefb120e6bd48abd5611a37f1f76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fence & Road
+    second: {fileID: 2100000, guid: 88108d1d633d9ca4e902773ceff616f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_Tile
+    second: {fileID: 2100000, guid: b8b0dca4ad3c2af479e68eb150bf448b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 05d808b14a590814cb9ad81a086bb127, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 2
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
