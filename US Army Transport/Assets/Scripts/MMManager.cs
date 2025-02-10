@@ -118,23 +118,58 @@ public class MMManager : MonoBehaviour
     }
 
 
+    //IEnumerator LoadAsyncScene(string sceneName)
+    //{
+    //    loadingScreenPanel.SetActive(true);
+    //    loadingBar.gameObject.SetActive(true);
+    //    async = SceneManager.LoadSceneAsync(sceneName);
+    //    async.allowSceneActivation = false;
+    //    while (!async.isDone)
+    //    {
+    //        if (async.progress >= 0.9f && loadingBar.fillAmount ==1f)
+    //        {
+    //            async.allowSceneActivation = true;
+    //        }
+    //        yield return null;
+    //    }
+    //}
+
     IEnumerator LoadAsyncScene(string sceneName)
     {
         loadingScreenPanel.SetActive(true);
-        loadingBar.gameObject.SetActive(true);
-        async = SceneManager.LoadSceneAsync(sceneName);
-        async.allowSceneActivation = false;
-        while (!async.isDone)
+        Transform parent = loadingBar.transform.parent.parent;
+        Animator animator= parent.GetComponent<Animator>();
+        animator.enabled = false;
+        float timer = 0f;
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+
+        while (timer < 5f)
         {
-            if (async.progress >= 0.9f && loadingBar.fillAmount ==1f)
+            if (timer < 5f)
             {
-                async.allowSceneActivation = true;
+                timer += Time.deltaTime;
+                float progress = Mathf.Clamp01(timer / 5f); 
+                loadingBar.fillAmount = progress;
+            }
+            else
+            {
+               
+                loadingBar.fillAmount = 1f;
+
+               
+                asyncLoad.allowSceneActivation = true;
             }
             yield return null;
         }
-    }
 
     
+
+        yield return new WaitForSeconds(0.1f);
+        asyncLoad.allowSceneActivation = true;
+    }
+
+
     public void BackBtn(string S) 
     {
         if (S == "ModeSel")  

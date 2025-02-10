@@ -153,7 +153,18 @@ public class RCC_MobileButtons : RCC_Core {
                 if (RCC_InputManager.gyroUsed) {
 
                     RCC_InputManager.gyroUsed = false;
-                    InputSystem.DisableDevice(UnityEngine.InputSystem.Accelerometer.current);
+
+
+                    var accelerometer = UnityEngine.InputSystem.Accelerometer.current;
+
+                    if (accelerometer != null)
+                    {
+                        InputSystem.DisableDevice(accelerometer);
+                    }
+                    else
+                    {
+                        Debug.Log("Accelerometer device is null.");
+                    }
 
                 }
 
@@ -185,7 +196,8 @@ public class RCC_MobileButtons : RCC_Core {
                 if (!RCC_InputManager.gyroUsed) {
 
                     RCC_InputManager.gyroUsed = true;
-                    InputSystem.EnableDevice(UnityEngine.InputSystem.Accelerometer.current);
+                    if (UnityEngine.InputSystem.Accelerometer.current != null)
+                        InputSystem.EnableDevice(UnityEngine.InputSystem.Accelerometer.current);
 
                 }
 
@@ -216,7 +228,16 @@ public class RCC_MobileButtons : RCC_Core {
                 if (RCC_InputManager.gyroUsed) {
 
                     RCC_InputManager.gyroUsed = false;
-                    InputSystem.DisableDevice(UnityEngine.InputSystem.Accelerometer.current);
+                    var accelerometer = UnityEngine.InputSystem.Accelerometer.current;
+
+                    if (accelerometer != null)
+                    {
+                        InputSystem.DisableDevice(accelerometer);
+                    }
+                    else
+                    {
+                        Debug.Log("Accelerometer device is null.");
+                    }
 
                 }
 

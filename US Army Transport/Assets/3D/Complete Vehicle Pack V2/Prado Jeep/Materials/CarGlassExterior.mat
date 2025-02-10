@@ -69,12 +69,12 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Shininess: 0.078125
+    - _Shininess: 0.104
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.5}
     - _SpecColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}

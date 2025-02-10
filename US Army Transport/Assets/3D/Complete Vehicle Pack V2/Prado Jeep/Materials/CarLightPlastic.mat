@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CarLightPlastic
-  m_Shader: {fileID: 4800000, guid: c5dc64499c09db947ade2eef19cb2a1a, type: 3}
+  m_Shader: {fileID: 4800000, guid: b401bcfc724834d4384d7289c3148fda, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -62,7 +62,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _Glossiness: 0
-    - _Metallic: 0
+    - _Metallic: 0.778
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -70,5 +70,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.22352941}
+    - _Color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0.12156863}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

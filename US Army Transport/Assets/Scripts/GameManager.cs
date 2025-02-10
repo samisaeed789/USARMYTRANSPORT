@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
     public CanvasGroup[] gpcanvas;
     public Text coinTxt;
     public Text timerTxt;
-    
+    public Image loadingBar;
+
 
 
 
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
     public GameObject Coins;
     public GameObject Gift;
     public GameObject Emoji;
+    public ParticleSystem CheckpointbLUE;
+    public ParticleSystem CheckpointYllw;
 
 
     [Header("Level Related")]
@@ -49,7 +53,12 @@ public class GameManager : MonoBehaviour
 
 
 
-    [HideInInspector]public bool Shipload;
+    [Header("CompltePnl")]
+    public Text Timetxt;
+    public Text CoinsEarnedlvltxt;
+
+
+   [HideInInspector]public bool Shipload;
     [HideInInspector]private bool isRunning;
     public bool IsPressing;
     public bool test;
@@ -65,6 +74,8 @@ public class GameManager : MonoBehaviour
     public int level;
     private float startTime;
     int nextlvl;
+    int CoinsEarnedInLvl;
+    float elapsedTime;
 
 
     public RCC_Demo RccCanv;
@@ -197,18 +208,18 @@ public class GameManager : MonoBehaviour
         if (IsPressing)
         {
             Gas.pressing = true;
+            
         }
 
         if (isRunning)
         {
             // Calculate the elapsed time
-            float elapsedTime = Time.time - startTime;
+            elapsedTime = Time.time - startTime;
 
             // Convert the elapsed time to minutes and seconds
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
             int seconds = Mathf.FloorToInt(elapsedTime % 60);
             // Display the time
-            Debug.Log("Time: " + minutes.ToString("00") + ":" + seconds.ToString("00"));
             timerTxt.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
         }
@@ -341,12 +352,8 @@ public class GameManager : MonoBehaviour
 
         if (MySoundManager.instance)
         {
-
-
             MySoundManager.instance.PlayFireworkSound(1f);
             MySoundManager.instance.PlayApplaudSound(true, 0.8f);
-
-
         }
         yield return new WaitForSeconds(8f);
         Canv(true);
@@ -361,6 +368,10 @@ public class GameManager : MonoBehaviour
 
         Celebcam.SetActive(false);
         CompletePanel.SetActive(true);
+        SetCoinsinPanel();
+
+
+
 
 
         if (MMManager.Levelno == PlayerPrefs.GetInt("UnlockedLevels"))
@@ -373,8 +384,59 @@ public class GameManager : MonoBehaviour
 
     }
 
+    void SetCoinsinPanel()
+    {
+        int timetxt = Mathf.FloorToInt(elapsedTime * 2);
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + 200+ timetxt);
+        CoinsEarnedlvltxt.text = 0.ToString();
+        Timetxt.text = 0.ToString();
+        StartCoroutine(CounterAnimation(200,CoinsEarnedlvltxt));
+        StartCoroutine(CounterAnimation(timetxt, Timetxt));
+    }
+
+   
+    bool stopAnimation;
+    private IEnumerator CounterAnimation(int totalCoins, Text coinstxt)
+    {
+
+        yield return new WaitForSeconds(1f);
+        int duration = 3; // Total duration for the animation
+        float elapsedTime = 0f; // Time elapsed since the start of the animation
+        int currentCoins = 0;
+
+        // Play sound if available
+        if (MySoundManager.instance)
+            MySoundManager.instance.PlayCounterAnim(1f);
 
 
+           
+
+        // Calculate the number of coins per second
+        int coinsPerSecond = totalCoins / duration;
+
+        // Loop until the animation reaches the total coins
+        while (elapsedTime < duration && !stopAnimation)
+        {
+            elapsedTime += Time.deltaTime; // Accumulate elapsed time
+            currentCoins = Mathf.FloorToInt(coinsPerSecond * elapsedTime); // Increment coins
+
+            // Make sure currentCoins does not exceed totalCoins
+            currentCoins = Mathf.Min(currentCoins, totalCoins);
+
+            // Update the UI or text with the current number of coins
+            coinstxt.text = currentCoins.ToString();
+
+            yield return null; // Wait until the next frame
+        }
+
+        // Ensure the final count is exactly totalCoins
+        coinstxt.text = totalCoins.ToString();
+
+        // Stop sound if available
+        if (MySoundManager.instance)
+            MySoundManager.instance.StopCounterAnim();
+
+    }
     public IEnumerator LevelFail()
     {
         if (MySoundManager.instance)
@@ -418,20 +480,23 @@ public class GameManager : MonoBehaviour
 
     public void Home() 
     {
+        MySoundManager.instance.PlayButtonClickSound(1);
         StartCoroutine(LoadAsyncScene("MainMenu"));
 
     }
 
     public void Next()
     {
+        MySoundManager.instance.PlayButtonClickSound(1);
+
         MMManager.Levelno = MMManager.Levelno + 1;
-        Debug.Log("MMManager.Levelno==="+ MMManager.Levelno);
         StartCoroutine(LoadAsyncScene("GamePlay"));
     }
     
     public void Pause() 
     {
 
+        MySoundManager.instance.PlayButtonClickSound(1);
 
         PausePnl.SetActive(true);
 
@@ -442,6 +507,7 @@ public class GameManager : MonoBehaviour
     }
     public void Resume()
     {
+        MySoundManager.instance.PlayButtonClickSound(1);
 
         if (MySoundManager.instance)
             MySoundManager.instance.SetBGM(true, 0.25f);
@@ -457,27 +523,42 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        MySoundManager.instance.PlayButtonClickSound(1);
         StartCoroutine(LoadAsyncScene("GamePlay"));
     }
 
 
 
+
     IEnumerator LoadAsyncScene(string sceneName)
     {
-        CompletePanel.SetActive(false);
+        Time.timeScale += 1f;
         loadingScreenPanel.SetActive(true);
-        async = SceneManager.LoadSceneAsync(sceneName);
-        async.allowSceneActivation = false;
-        while (!async.isDone)
-        {
-            if (async.progress >= 0.9f)
-            {
-                async.allowSceneActivation = true;
-            }
+        float timer = 0f;
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
 
+        while (timer < 5f)
+        {
+            if (timer < 5f)
+            {
+                timer += Time.deltaTime;
+                float progress = Mathf.Clamp01(timer / 5f);
+                loadingBar.fillAmount = progress;
+            }
+            else
+            {
+
+                loadingBar.fillAmount = 1f;
+                asyncLoad.allowSceneActivation = true;
+            }
             yield return null;
         }
-       loadingScreenPanel.SetActive(false);
+
+
+
+        yield return new WaitForSeconds(0.1f);
+        asyncLoad.allowSceneActivation = true;
     }
 
     public void FellOcean() 
@@ -550,7 +631,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenController()
     {
-
+        MySoundManager.instance.PlayButtonClickSound(1);
         cntrSel.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -561,6 +642,23 @@ public class GameManager : MonoBehaviour
         RccCanv.SetMobileController(val);
         cntrSel.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void Cpfloat(String S) 
+    {
+        if (S == "Blue") 
+        {
+            CheckpointbLUE.Play();
+            CpFloat.SetActive(true);
+
+        }
+
+        if (S == "Yellow")
+        {
+            CheckpointYllw.Play();
+            CpFloatYellow.SetActive(true);
+        }
+        MySoundManager.instance.PlayCPSound(1f);
     }
 
 }

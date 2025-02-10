@@ -46,6 +46,7 @@ public class MySoundManager : MonoBehaviour {
     public AudioClip Applaud;
     public AudioClip GreatJob;
     public AudioClip Splash;
+    public AudioClip Counting;
   
 
 	[Header("Booleans")]
@@ -267,7 +268,19 @@ public class MySoundManager : MonoBehaviour {
 	}
 	
 
-
+	public void PlayCounterAnim(float val) 
+	{
+        soundValue = val;
+        Effectsource.volume = soundValue;
+        Effectsource.clip = Counting;
+        Effectsource.loop = true;
+        Effectsource.Play();
+    }
+	public void StopCounterAnim() 
+	{
+        Effectsource.Stop();
+        Effectsource.clip = null;
+    }
 
 
 

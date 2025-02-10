@@ -44,8 +44,10 @@ public class Objectives : MonoBehaviour
 
     public void Ok() 
     {
+        MySoundManager.instance.PlayButtonClickSound(1);
         this.gameObject.SetActive(false);
         GameManager.Instance.Canv(true);
+        
     }
 }
 [System.Serializable]

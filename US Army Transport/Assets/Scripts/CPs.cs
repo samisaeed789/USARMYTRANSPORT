@@ -11,15 +11,14 @@ public class CPs : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") 
         {
-            if(IsBlue)
-                GameManager.Instance.CpFloat.SetActive(true);
-            
+            if (IsBlue)
+                GameManager.Instance.Cpfloat("Blue");
+
             else
-                GameManager.Instance.CpFloatYellow.SetActive(true);
+                GameManager.Instance.Cpfloat("Yellow");
 
 
 
-            MySoundManager.instance.PlayCPSound(1f);
             this.gameObject.SetActive(false);
         }
     }
