@@ -48,6 +48,8 @@ public class MMManager : MonoBehaviour
         Time.timeScale = 1f;
 
         Application.targetFrameRate = 120;
+
+        AdsController.Instance?.ShowBannerAd_Admob(0);
     }
 
     public void GoToModeSelection()
@@ -65,7 +67,12 @@ public class MMManager : MonoBehaviour
     {
         if (MySoundManager.instance)
             MySoundManager.instance.PlayButtonClickSound(1f);
+
+
+        PlayInter();
         StartCoroutine(LoadPanel("LevelSelection"));
+
+
     }
 
     public void GoToMainMenu()
@@ -114,6 +121,8 @@ public class MMManager : MonoBehaviour
 
 
         Levelno = i;
+
+        PlayInter();
         StartCoroutine(LoadAsyncScene("GamePlay"));
     }
 
@@ -136,6 +145,7 @@ public class MMManager : MonoBehaviour
 
     IEnumerator LoadAsyncScene(string sceneName)
     {
+        yield return new WaitForSeconds(0.2f);
         loadingScreenPanel.SetActive(true);
         Transform parent = loadingBar.transform.parent.parent;
         Animator animator= parent.GetComponent<Animator>();
@@ -272,7 +282,6 @@ public class MMManager : MonoBehaviour
 
         if (mainMenuPanel.activeSelf)
         {
-
             exitPanel.SetActive(true);
         }
 
@@ -287,6 +296,20 @@ public class MMManager : MonoBehaviour
             levelSelectionPanel.SetActive(false);
             modeSelectionPanel.SetActive(true);
         }
+    }
+
+    public void PlayRect(bool val) 
+    {
+        if (val)
+            AdsController.Instance.ShowBannerAd_Admob(1);
+
+        else
+            AdsController.Instance.HideBannerAd_Admob(1);
+    }
+
+    public void PlayInter()
+    {
+        AdsController.Instance?.ShowInterstitialAd_Admob();
     }
 
 }

@@ -1,0 +1,26 @@
+<dependencies>
+	<androidPackages>
+		<androidPackage spec="androidx.lifecycle:lifecycle-common-java8:2.6.1">
+			<repositories>
+				<repository>https://maven.google.com/</repository>
+			</repositories>
+		</androidPackage>
+
+		<androidPackage spec="androidx.lifecycle:lifecycle-process:2.6.1">
+			<repositories>
+				<repository>https://maven.google.com/</repository>
+			</repositories>
+		</androidPackage>
+
+		<!-- Added androidx.fragment:fragment:1.6.0 dependency -->
+		<!-- if you dont want to add this dependency , comment it from here to  -->
+		<androidPackage spec="androidx.fragment:fragment:1.6.0">
+			<repositories>
+				<repository>https://maven.google.com/</repository>
+			</repositories>
+		</androidPackage>
+		<!-- HERE -->
+	</androidPackages>
+
+	
+</dependencies>

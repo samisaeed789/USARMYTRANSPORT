@@ -367,7 +367,10 @@ public class GameManager : MonoBehaviour
         }
 
         Celebcam.SetActive(false);
+        PlayInter();
+
         CompletePanel.SetActive(true);
+        PlayRect(true);
         SetCoinsinPanel();
 
 
@@ -471,9 +474,10 @@ public class GameManager : MonoBehaviour
 
         Celebcam.SetActive(false);
         FailPanel.SetActive(true);
+        PlayRect(true);
 
 
-      
+
     }
 
 
@@ -481,6 +485,8 @@ public class GameManager : MonoBehaviour
     public void Home() 
     {
         MySoundManager.instance.PlayButtonClickSound(1);
+        PlayInter();
+
         StartCoroutine(LoadAsyncScene("MainMenu"));
 
     }
@@ -490,6 +496,7 @@ public class GameManager : MonoBehaviour
         MySoundManager.instance.PlayButtonClickSound(1);
 
         MMManager.Levelno = MMManager.Levelno + 1;
+        PlayInter();
         StartCoroutine(LoadAsyncScene("GamePlay"));
     }
     
@@ -503,6 +510,10 @@ public class GameManager : MonoBehaviour
         if (MySoundManager.instance)
             MySoundManager.instance.SetBGM(false,0);
 
+        PlayInter();
+        PlayRect(true);
+
+
         Time.timeScale = 0f;
     }
     public void Resume()
@@ -511,6 +522,9 @@ public class GameManager : MonoBehaviour
 
         if (MySoundManager.instance)
             MySoundManager.instance.SetBGM(true, 0.25f);
+       
+        
+        PlayRect(false);
 
 
         PausePnl.SetActive(false);
@@ -524,6 +538,7 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         MySoundManager.instance.PlayButtonClickSound(1);
+        PlayInter();
         StartCoroutine(LoadAsyncScene("GamePlay"));
     }
 
@@ -532,6 +547,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadAsyncScene(string sceneName)
     {
+        yield return new WaitForSeconds(0.1f);
         Time.timeScale += 1f;
         loadingScreenPanel.SetActive(true);
         float timer = 0f;
@@ -558,6 +574,7 @@ public class GameManager : MonoBehaviour
 
 
         yield return new WaitForSeconds(0.1f);
+        PlayRect(false);
         asyncLoad.allowSceneActivation = true;
     }
 
@@ -660,5 +677,17 @@ public class GameManager : MonoBehaviour
         }
         MySoundManager.instance.PlayCPSound(1f);
     }
+    public void PlayRect(bool val)
+    {
+        if (val)
+            AdsController.Instance.ShowBannerAd_Admob(1);
 
+        else
+            AdsController.Instance.HideBannerAd_Admob(1);
+    }
+
+    public void PlayInter()
+    {
+        AdsController.Instance?.ShowInterstitialAd_Admob();
+    }
 }
