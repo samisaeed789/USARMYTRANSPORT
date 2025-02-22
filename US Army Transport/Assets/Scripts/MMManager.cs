@@ -50,6 +50,8 @@ public class MMManager : MonoBehaviour
         Application.targetFrameRate = 120;
 
         AdsController.Instance?.ShowBannerAd_Admob(0);
+
+
     }
 
     public void GoToModeSelection()
@@ -146,6 +148,7 @@ public class MMManager : MonoBehaviour
     IEnumerator LoadAsyncScene(string sceneName)
     {
         yield return new WaitForSeconds(0.2f);
+        PlayRect(true);
         loadingScreenPanel.SetActive(true);
         Transform parent = loadingBar.transform.parent.parent;
         Animator animator= parent.GetComponent<Animator>();
@@ -167,7 +170,6 @@ public class MMManager : MonoBehaviour
                
                 loadingBar.fillAmount = 1f;
 
-               
                 asyncLoad.allowSceneActivation = true;
             }
             yield return null;
@@ -176,6 +178,7 @@ public class MMManager : MonoBehaviour
     
 
         yield return new WaitForSeconds(0.1f);
+        PlayRect(false);
         asyncLoad.allowSceneActivation = true;
     }
 
@@ -287,6 +290,7 @@ public class MMManager : MonoBehaviour
 
         if (modeSelectionPanel.activeSelf)
         {
+            PlayInter();
             modeSelectionPanel.SetActive(false);
             mainMenuPanel.SetActive(true);
         }

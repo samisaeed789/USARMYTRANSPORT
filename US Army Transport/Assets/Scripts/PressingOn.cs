@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PressingOn : MonoBehaviour
 {
-
-
     public void PressOn() 
     {
 
@@ -22,7 +20,7 @@ public class PressingOn : MonoBehaviour
     {
        GameManager.Instance.DelayCall(Off:true);
     }
-      public void StartSound()
+    public void StartSound()
     {
         if (MySoundManager.instance)
             MySoundManager.instance.PlayRampSound(0.5f);

@@ -1,94 +1,266 @@
 fileFormatVersion: 2
 guid: 901c959b77168754886bee0224e5d67a
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: HQ building fz
-    100002: //RootNode
-    100004: Police_HQ_Board
-    100006: HQ A
-    100008: HQ B
-    100010: HQ building
-    100012: Object001
-    100014: cell blocks
-    100016: cell Gate 1
-    100018: cell gate 2
-    100020: cell gate 3
-    100022: cell gate 4
-    100024: cell gate 5
-    100026: cell main game
-    100028: exterior jail
-    100030: Gate Front
-    100032: Object005
-    400000: HQ building fz
-    400002: //RootNode
-    400004: Police_HQ_Board
-    400006: HQ A
-    400008: HQ B
-    400010: HQ building
-    400012: Object001
-    400014: cell blocks
-    400016: cell Gate 1
-    400018: cell gate 2
-    400020: cell gate 3
-    400022: cell gate 4
-    400024: cell gate 5
-    400026: cell main game
-    400028: exterior jail
-    400030: Gate Front
-    400032: Object005
-    2300000: HQ building fz
-    2300002: Police_HQ_Board
-    2300004: HQ A
-    2300006: HQ B
-    2300008: HQ building
-    2300010: Object001
-    2300012: //RootNode
-    2300014: cell blocks
-    2300016: cell Gate 1
-    2300018: cell gate 2
-    2300020: cell gate 3
-    2300022: cell gate 4
-    2300024: cell gate 5
-    2300026: cell main game
-    2300028: exterior jail
-    2300030: Gate Front
-    2300032: Object005
-    3300000: HQ building fz
-    3300002: Police_HQ_Board
-    3300004: HQ A
-    3300006: HQ B
-    3300008: HQ building
-    3300010: Object001
-    3300012: //RootNode
-    3300014: cell blocks
-    3300016: cell Gate 1
-    3300018: cell gate 2
-    3300020: cell gate 3
-    3300022: cell gate 4
-    3300024: cell gate 5
-    3300026: cell main game
-    3300028: exterior jail
-    3300030: Gate Front
-    3300032: Object005
-    4300000: HQ building fz
-    4300002: Police_HQ_Board
-    4300004: HQ building
-    4300006: HQ B
-    4300008: HQ A
-    4300010: Object001
-    4300012: cell gate 5
-    4300014: cell gate 4
-    4300016: Gate Front
-    4300018: exterior jail
-    4300020: cell Gate 1
-    4300022: cell gate 2
-    4300024: cell gate 3
-    4300026: cell main game
-    4300028: cell blocks
-    4300030: Object005
-    7400000: Take 001
-    9500000: //RootNode
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: HQ building fz
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: Police_HQ_Board
+  - first:
+      1: 100006
+    second: HQ A
+  - first:
+      1: 100008
+    second: HQ B
+  - first:
+      1: 100010
+    second: HQ building
+  - first:
+      1: 100012
+    second: Object001
+  - first:
+      1: 100014
+    second: cell blocks
+  - first:
+      1: 100016
+    second: cell Gate 1
+  - first:
+      1: 100018
+    second: cell gate 2
+  - first:
+      1: 100020
+    second: cell gate 3
+  - first:
+      1: 100022
+    second: cell gate 4
+  - first:
+      1: 100024
+    second: cell gate 5
+  - first:
+      1: 100026
+    second: cell main game
+  - first:
+      1: 100028
+    second: exterior jail
+  - first:
+      1: 100030
+    second: Gate Front
+  - first:
+      1: 100032
+    second: Object005
+  - first:
+      4: 400000
+    second: HQ building fz
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: Police_HQ_Board
+  - first:
+      4: 400006
+    second: HQ A
+  - first:
+      4: 400008
+    second: HQ B
+  - first:
+      4: 400010
+    second: HQ building
+  - first:
+      4: 400012
+    second: Object001
+  - first:
+      4: 400014
+    second: cell blocks
+  - first:
+      4: 400016
+    second: cell Gate 1
+  - first:
+      4: 400018
+    second: cell gate 2
+  - first:
+      4: 400020
+    second: cell gate 3
+  - first:
+      4: 400022
+    second: cell gate 4
+  - first:
+      4: 400024
+    second: cell gate 5
+  - first:
+      4: 400026
+    second: cell main game
+  - first:
+      4: 400028
+    second: exterior jail
+  - first:
+      4: 400030
+    second: Gate Front
+  - first:
+      4: 400032
+    second: Object005
+  - first:
+      23: 2300000
+    second: HQ building fz
+  - first:
+      23: 2300002
+    second: Police_HQ_Board
+  - first:
+      23: 2300004
+    second: HQ A
+  - first:
+      23: 2300006
+    second: HQ B
+  - first:
+      23: 2300008
+    second: HQ building
+  - first:
+      23: 2300010
+    second: Object001
+  - first:
+      23: 2300012
+    second: //RootNode
+  - first:
+      23: 2300014
+    second: cell blocks
+  - first:
+      23: 2300016
+    second: cell Gate 1
+  - first:
+      23: 2300018
+    second: cell gate 2
+  - first:
+      23: 2300020
+    second: cell gate 3
+  - first:
+      23: 2300022
+    second: cell gate 4
+  - first:
+      23: 2300024
+    second: cell gate 5
+  - first:
+      23: 2300026
+    second: cell main game
+  - first:
+      23: 2300028
+    second: exterior jail
+  - first:
+      23: 2300030
+    second: Gate Front
+  - first:
+      23: 2300032
+    second: Object005
+  - first:
+      33: 3300000
+    second: HQ building fz
+  - first:
+      33: 3300002
+    second: Police_HQ_Board
+  - first:
+      33: 3300004
+    second: HQ A
+  - first:
+      33: 3300006
+    second: HQ B
+  - first:
+      33: 3300008
+    second: HQ building
+  - first:
+      33: 3300010
+    second: Object001
+  - first:
+      33: 3300012
+    second: //RootNode
+  - first:
+      33: 3300014
+    second: cell blocks
+  - first:
+      33: 3300016
+    second: cell Gate 1
+  - first:
+      33: 3300018
+    second: cell gate 2
+  - first:
+      33: 3300020
+    second: cell gate 3
+  - first:
+      33: 3300022
+    second: cell gate 4
+  - first:
+      33: 3300024
+    second: cell gate 5
+  - first:
+      33: 3300026
+    second: cell main game
+  - first:
+      33: 3300028
+    second: exterior jail
+  - first:
+      33: 3300030
+    second: Gate Front
+  - first:
+      33: 3300032
+    second: Object005
+  - first:
+      43: 4300000
+    second: HQ building fz
+  - first:
+      43: 4300002
+    second: Police_HQ_Board
+  - first:
+      43: 4300004
+    second: HQ building
+  - first:
+      43: 4300006
+    second: HQ B
+  - first:
+      43: 4300008
+    second: HQ A
+  - first:
+      43: 4300010
+    second: Object001
+  - first:
+      43: 4300012
+    second: cell gate 5
+  - first:
+      43: 4300014
+    second: cell gate 4
+  - first:
+      43: 4300016
+    second: Gate Front
+  - first:
+      43: 4300018
+    second: exterior jail
+  - first:
+      43: 4300020
+    second: cell Gate 1
+  - first:
+      43: 4300022
+    second: cell gate 2
+  - first:
+      43: 4300024
+    second: cell gate 3
+  - first:
+      43: 4300026
+    second: cell main game
+  - first:
+      43: 4300028
+    second: cell blocks
+  - first:
+      43: 4300030
+    second: Object005
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -106,7 +278,7 @@ ModelImporter:
       name: Building_Diffuse
     second: {fileID: 2100000, guid: 9614a9aa6e56373408682e62c171597f, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -115,6 +287,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -136,28 +309,39 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 12
-    meshCompression: 2
+    meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.3048
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -166,10 +350,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -179,13 +363,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 12
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

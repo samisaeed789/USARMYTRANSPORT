@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject RccCam;
+    public GameObject Env;
 
     [Header("UI Related")]
     public GameObject CpFloat;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     public Text coinTxt;
     public Text timerTxt;
     public Image loadingBar;
+    public GameObject LoadBars;
 
 
 
@@ -91,7 +93,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void Start()
+    private IEnumerator Start()
     {
 
         Application.targetFrameRate = 60;
@@ -102,6 +104,8 @@ public class GameManager : MonoBehaviour
         else
             lvlnmbr =MMManager.Levelno;
 
+
+        Env.SetActive(true);
         if (lvlnmbr>0)lvlstats[lvlnmbr - 1].gameObject.SetActive(true);
 
         coinTxt.text = PlayerPrefs.GetInt("Coins").ToString();
@@ -109,12 +113,15 @@ public class GameManager : MonoBehaviour
         SetMobileController(0);
 
         StartStopwatch();
-
+        yield return null;
     }
 
     GameObject UpperPlank;
+    LevelStats lvlstts;
     public void OnLevelStatsLoadedHandler(LevelStats levelStats)
     {
+        lvlstts = levelStats;
+        PlayRect(true); 
         //Setting Player Cars
         for (int i = 0; i < levelStats.Players.Length; i++)
         {
@@ -184,24 +191,33 @@ public class GameManager : MonoBehaviour
             UpperPlank = levelStats.UpperPlank;
 
 
+      
 
-        if (MySoundManager.instance)
-            MySoundManager.instance.SetBGM(true,0.25f);
+        Invoke(nameof(del),2f);
+       
+    }
 
+
+    void del() 
+    {
 
         if (loadingScreenPanel)
             loadingScreenPanel.SetActive(false);
 
 
-        if (levelStats.EnableAnim.Length==0)
+        if (MySoundManager.instance)
+            MySoundManager.instance.SetBGM(true, 0.25f);
+       
+        
+        PlayRect(false);
+
+        if (lvlstts.EnableAnim.Length == 0)
         {
             Canv(false);
             Objective.SetActive(true);
             Objective.GetComponent<Objectives>().SetObjective(lvlnmbr);
         }
-       
     }
-
 
     private void Update()
     {
@@ -315,12 +331,13 @@ public class GameManager : MonoBehaviour
 
        // blockInteract.SetActive( false);
 
-        for (int i = 0; i < gpcanvas.Length; i++)
-        {
-            gpcanvas[i].interactable = true;
-            gpcanvas[i].alpha = 1;
-        }
-
+        //for (int i = 0; i < gpcanvas.Length; i++)
+        //{
+        //    gpcanvas[i].interactable = true;
+        //    gpcanvas[i].alpha = 1;
+        //}
+        //if (lvlstts.UpperPlank)
+        //    lvlstts.UpperPlank.SetActive(true);
 
         Canv(true);
     }
@@ -484,15 +501,16 @@ public class GameManager : MonoBehaviour
 
     public void Home() 
     {
+        Time.timeScale = 1f;
         MySoundManager.instance.PlayButtonClickSound(1);
         PlayInter();
-
         StartCoroutine(LoadAsyncScene("MainMenu"));
-
     }
 
     public void Next()
     {
+        
+        Time.timeScale = 1f;
         MySoundManager.instance.PlayButtonClickSound(1);
 
         MMManager.Levelno = MMManager.Levelno + 1;
@@ -518,6 +536,7 @@ public class GameManager : MonoBehaviour
     }
     public void Resume()
     {
+        Time.timeScale = 1f;
         MySoundManager.instance.PlayButtonClickSound(1);
 
         if (MySoundManager.instance)
@@ -528,7 +547,6 @@ public class GameManager : MonoBehaviour
 
 
         PausePnl.SetActive(false);
-        Time.timeScale = 1f;
 
 
        
@@ -537,6 +555,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1f;
         MySoundManager.instance.PlayButtonClickSound(1);
         PlayInter();
         StartCoroutine(LoadAsyncScene("GamePlay"));
@@ -547,6 +566,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadAsyncScene(string sceneName)
     {
+        LoadBars.SetActive(true);    
         yield return new WaitForSeconds(0.1f);
         Time.timeScale += 1f;
         loadingScreenPanel.SetActive(true);
@@ -594,11 +614,12 @@ public class GameManager : MonoBehaviour
 
         if (val==false)
         {
-            //blockInteract.SetActive(!val);
+           // blockInteract.SetActive(!val);
 
             for (int i = 0; i < gpcanvas.Length; i++)
             {
                 gpcanvas[i].interactable = false;
+                gpcanvas[i].blocksRaycasts = false;
                 gpcanvas[i].alpha = 0;
             }
         }
@@ -606,10 +627,11 @@ public class GameManager : MonoBehaviour
 
         if (val)
         {
-           // blockInteract.SetActive(val);
+            //blockInteract.SetActive(val);
             for (int i = 0; i < gpcanvas.Length; i++)
             {
                 gpcanvas[i].interactable = true;
+                gpcanvas[i].blocksRaycasts = true;
                 gpcanvas[i].alpha = 1;
             }
         }
@@ -680,10 +702,10 @@ public class GameManager : MonoBehaviour
     public void PlayRect(bool val)
     {
         if (val)
-            AdsController.Instance.ShowBannerAd_Admob(1);
+            AdsController.Instance?.ShowBannerAd_Admob(1);
 
         else
-            AdsController.Instance.HideBannerAd_Admob(1);
+            AdsController.Instance?.HideBannerAd_Admob(1);
     }
 
     public void PlayInter()
